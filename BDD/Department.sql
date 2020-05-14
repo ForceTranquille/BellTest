@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[Department]
+(
+	[DEPNO] INT NOT NULL PRIMARY KEY,
+	[DNAME] VARCHAR(100) NOT NULL,
+)

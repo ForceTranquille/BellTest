@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Liste";
+}
+@using GridMvc.Html
+@model IEnumerable<DAL.Ticket>
+
+
+<h2>Page pour rechercher les billets reçus</h2>
+<br />
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.btn-delete-ticket').click(function (event) {
+                var boutonClique = $(event.target).closest('button');
+
+                var idASupprimer = $(boutonClique).attr('data-id');
+
+                $.ajax({
+                    url: '@Url.Action("Delete")',
+                    type: 'POST',
+                    data: { id: idASupprimer },
+                    success: function (data) {
+                        if (data.Suppression == "OK") {
+                            $(boutonClique).closest("tr").fadeOut(400, function () {
+                                $(this).remove();
+                            })
+                        }
+                    }
+                })
+            });
+        });
+    </script>
+}
+
+
+
+
+@Html.Grid(Model).Columns(columns =>
+{
+columns.Add(t => t.PROJECTNAME).Titled("Nom du projet").Filterable(true).Sortable(true);
+columns.Add(t => t.Employee.Department.DNAME).Titled("Département").Filterable(true).Sortable(true); ;
+columns.Add(t => t.DATECREATION).Titled("La date réception").Filterable(true).Sortable(true);
+columns.Add(t => t.Employee.ENAME).Titled("Le nom du demandeur").Filterable(true).Sortable(true);
+columns.Add(t => t.DESCRIPTION).Titled("Description du problème").Filterable(true).Sortable(true);
+columns.Add().Sanitized(false).Encoded(false).RenderValueAs(t => Html.ActionLink("Éditer", "Edit", new { id = t.TICKETNO })); columns.Add().Sanitized(false).Encoded(false).RenderValueAs(t => "<button class='btn btn-default btn-delete-ticket' data-id='" + t.TICKETNO + "'> <span class='glyphicon glyphicon-remove-circle' /> </button>");
+}).WithPaging(10)
+
+<div>
+    @Html.ActionLink("Retour a la Création", "Edit")
+</div>

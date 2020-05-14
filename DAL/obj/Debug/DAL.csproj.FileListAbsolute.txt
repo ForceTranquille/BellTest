@@ -1,0 +1,13 @@
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\DAL\bin\Debug\DAL.dll.config
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\DAL\bin\Debug\DAL.dll
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\DAL\bin\Debug\DAL.pdb
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\DAL\bin\Debug\EntityFramework.dll
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\DAL\bin\Debug\EntityFramework.xml
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\DAL\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\DAL\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\DAL\obj\Debug\DAL.dll
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\DAL\obj\Debug\DAL.pdb

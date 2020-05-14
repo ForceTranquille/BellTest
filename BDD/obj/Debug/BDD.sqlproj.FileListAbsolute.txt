@@ -1,0 +1,9 @@
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\BDD\bin\Debug\BDD.dacpac
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\BDD\bin\Debug\BDD.dll
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\BDD\bin\Debug\BDD.pdb
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\BDD\obj\Debug\Model.xml
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\BDD\obj\Debug\refactor.xml
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\BDD\obj\Debug\postdeploy.sql
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\BDD\obj\Debug\predeploy.sql
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\BDD\obj\Debug\BDD.dll
+C:\Users\rabim\OneDrive\Bureau\1\HelpDesk.Bell\BDD\obj\Debug\BDD.pdb

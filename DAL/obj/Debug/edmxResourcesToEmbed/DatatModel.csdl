@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HelpDeskModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DEPNO" />
+    </Key>
+    <Property Name="DEPNO" Type="Int32" Nullable="false" />
+    <Property Name="DNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Dept_Emp" FromRole="Department" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EMPNO" />
+    </Key>
+    <Property Name="EMPNO" Type="Int32" Nullable="false" />
+    <Property Name="ENAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DEPNO" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_Dept_Emp" FromRole="Employee" ToRole="Department" />
+    <NavigationProperty Name="Ticket" Relationship="Self.FK_Ticket_Emp" FromRole="Employee" ToRole="Ticket" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="TICKETNO" />
+    </Key>
+    <Property Name="TICKETNO" Type="Int32" Nullable="false" />
+    <Property Name="EMPNO" Type="Int32" Nullable="false" />
+    <Property Name="PROJECTNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DATECREATION" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_Ticket_Emp" FromRole="Ticket" ToRole="Employee" />
+  </EntityType>
+  <Association Name="FK_Dept_Emp">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DEPNO" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="DEPNO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ticket_Emp">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EMPNO" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="EMPNO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HelpDeskEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Department" EntityType="Self.Department" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" />
+    <EntitySet Name="Ticket" EntityType="Self.Ticket" />
+    <AssociationSet Name="FK_Dept_Emp" Association="Self.FK_Dept_Emp">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ticket_Emp" Association="Self.FK_Ticket_Emp">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Ticket" EntitySet="Ticket" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
